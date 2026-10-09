@@ -7,39 +7,13 @@ return {
   opts = {
     strategies = {
       chat = {
-        adapter = "qwen35",
+        adapter = "ollama",
+        model = "qwen3.5:4b",
       },
       inline = {
-        adapter = "qwen25",
+        adapter = "ollama",
+        model = "qwen2.5-coder:7b",
       },
-    },
-    adapters = {
-      qwen2 = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          name = "qwen25",
-          schema = {
-            num_ctx = {
-              default = 16384,
-            },
-            model = {
-              default = "qwen2.5-coder:7b",
-            },
-          },
-        })
-      end,
-      qwen3 = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          name = "qwen35",
-          schema = {
-            num_ctx = {
-              default = 16384,
-            },
-            model = {
-              default = "qwen3.5:4b",
-            },
-          },
-        })
-      end,
     },
     opts = {
       log_level = "DEBUG",

@@ -52,3 +52,6 @@ vim.opt.fillchars = {
   foldclose = "▸", -- character for a closed fold in the fold column
   foldsep = "│", -- character for the vertical line in the fold column
 }
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.list = false
